@@ -16,11 +16,8 @@ function App() {
       <p className="read-the-docs" id="id123">
         Click on Here
       </p>
-<<<<<<< HEAD
       <span>{count}</span>
-=======
       <span>Sayac:</span>
->>>>>>> ECMX-1018
     </>
   );
 }
