@@ -11,8 +11,8 @@ function App() {
       <div>
         <button onClick={() => alert('BOM')}>ALERT</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <p className="read-the-docs" id="id123">
+        Click on Here
       </p>
     </>
   )
