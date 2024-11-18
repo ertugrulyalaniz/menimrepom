@@ -11,7 +11,7 @@ function App() {
     <>
       <div>
         <Title />
-        <button onClick={() => alert('BOM')}>ALERT</button>
+        <button className="mor" onClick={() => alert('BOM')}>ALERT</button>
       </div>
       <span>{count}</span>
       <span>Sayac:</span>
