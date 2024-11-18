@@ -25,8 +25,8 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on HEre
+      <p className="read-the-docs" id="id123">
+        Click on Here
       </p>
     </>
   )
