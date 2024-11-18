@@ -13,9 +13,6 @@ function App() {
         <Title />
         <button onClick={() => alert('BOM')}>ALERT</button>
       </div>
-      <p className="read-the-docs" id="id123">
-        Click on Here
-      </p>
       <span>{count}</span>
       <span>Sayac:</span>
     </>
