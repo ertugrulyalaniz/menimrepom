@@ -17,6 +17,7 @@ function App() {
         Click on Here
       </p>
       <span>{count}</span>
+      <span>Sayac:</span>
     </>
   );
 }
