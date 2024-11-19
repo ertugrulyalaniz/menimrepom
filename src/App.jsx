@@ -1,21 +1,45 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Title from './components/title';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodo, toggleTodo } from './features/todoSlice';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [task, setTask] = useState('');
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  const handleAddTodo = () => {
+    if (task) {
+      dispatch(addTodo(task));
+      setTask('');
+    }
+  };
+
+  const handleToggleTodo = (id) => {
+    dispatch(toggleTodo(id));
+  };
 
   return (
-    <>
-      <div>
-        <Title />
-        <button className="mor" onClick={() => alert('BOM')}>ALERT</button>
-      </div>
-      <span>{count}</span>
-      <span>Sayac:</span>
-    </>
+    <div>
+      <h1>Görev Yönetimi</h1>
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Görev ekleyin"
+      />
+      <button onClick={handleAddTodo}>Ekle</button>
+
+      <ul>
+        {todos.map((todo) => (
+          <li
+            key={todo.id}
+            onClick={() => handleToggleTodo(todo.id)}
+            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+          >
+            {todo.text}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
